@@ -18,7 +18,8 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/projects', require('./routes/projects'));
 app.use('/api/tasks', require('./routes/tasks'));
 
-if (process.env.NODE_ENV !== 'production') {
+// Render and local environments need app.listen. Vercel serverless does not.
+if (process.env.VERCEL !== '1') {
   app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 }
 
