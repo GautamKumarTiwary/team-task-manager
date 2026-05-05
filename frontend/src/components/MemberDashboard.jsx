@@ -10,7 +10,7 @@ const MemberDashboard = () => {
   const fetchTasks = async () => {
     try {
       const config = { headers: { Authorization: `Bearer ${user.token}` } };
-      const { data } = await axios.get('http://localhost:5000/api/tasks/user', config);
+      const { data } = await axios.get('https://backend-lze71hvn5-gautam-kumar-tiwarys-projects.vercel.app/api/tasks/user', config);
       setTasks(data);
     } catch (error) {
       console.error('Error fetching tasks', error);
@@ -24,7 +24,7 @@ const MemberDashboard = () => {
   const handleStatusChange = async (taskId, newStatus) => {
     try {
       const config = { headers: { Authorization: `Bearer ${user.token}` } };
-      await axios.put(`http://localhost:5000/api/tasks/${taskId}/status`, { status: newStatus }, config);
+      await axios.put(`https://backend-lze71hvn5-gautam-kumar-tiwarys-projects.vercel.app/api/tasks/${taskId}/status`, { status: newStatus }, config);
       fetchTasks();
     } catch (error) {
       console.error('Error updating status', error);

@@ -19,14 +19,14 @@ const AdminDashboard = () => {
     try {
       const config = { headers: { Authorization: `Bearer ${user.token}` } };
       const [projRes, usersRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/projects', config),
-        axios.get('http://localhost:5000/api/auth/users', config)
+        axios.get('https://backend-lze71hvn5-gautam-kumar-tiwarys-projects.vercel.app/api/projects', config),
+        axios.get('https://backend-lze71hvn5-gautam-kumar-tiwarys-projects.vercel.app/api/auth/users', config)
       ]);
       setProjects(projRes.data);
       setUsers(usersRes.data.filter(u => u.role === 'Member'));
       
       // Fetch tasks for all projects
-      const tasksPromises = projRes.data.map(p => axios.get(`http://localhost:5000/api/tasks/project/${p._id}`, config));
+      const tasksPromises = projRes.data.map(p => axios.get(`https://backend-lze71hvn5-gautam-kumar-tiwarys-projects.vercel.app/api/tasks/project/${p._id}`, config));
       const tasksResponses = await Promise.all(tasksPromises);
       const allTasks = tasksResponses.flatMap(res => res.data);
       setTasks(allTasks);
@@ -43,7 +43,7 @@ const AdminDashboard = () => {
     e.preventDefault();
     try {
       const config = { headers: { Authorization: `Bearer ${user.token}` } };
-      await axios.post('http://localhost:5000/api/projects', newProject, config);
+      await axios.post('https://backend-lze71hvn5-gautam-kumar-tiwarys-projects.vercel.app/api/projects', newProject, config);
       setShowProjectModal(false);
       setNewProject({ name: '', description: '', members: [] });
       fetchData();
@@ -56,7 +56,7 @@ const AdminDashboard = () => {
     e.preventDefault();
     try {
       const config = { headers: { Authorization: `Bearer ${user.token}` } };
-      await axios.post('http://localhost:5000/api/tasks', newTask, config);
+      await axios.post('https://backend-lze71hvn5-gautam-kumar-tiwarys-projects.vercel.app/api/tasks', newTask, config);
       setShowTaskModal(false);
       setNewTask({ title: '', description: '', project: '', assignedTo: [], dueDate: '' });
       fetchData();
