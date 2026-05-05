@@ -2,7 +2,7 @@
 
 A full-stack web application designed for teams to create projects, assign tasks, and track progress with role-based access control.
 
-## 🚀 Features
+##  Features
 - **Role-Based Authentication**: Secure login and signup with `Admin` and `Member` roles.
 - **Project Management**: Admins can create new projects and assign specific team members to them.
 - **Task Management**: Admins can create and assign tasks to single or multiple project members.
@@ -11,13 +11,13 @@ A full-stack web application designed for teams to create projects, assign tasks
 - **Cloud Database**: Integrated with MongoDB Atlas.
 - **Modern UI**: Fully responsive, premium interface built with Tailwind CSS v4.
 
-## 💻 Tech Stack
+##  Tech Stack
 - **Frontend**: React.js (Vite), Tailwind CSS v4, React Router DOM, Axios, Lucide React (Icons).
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB (Mongoose ORM)
 - **Authentication**: JSON Web Tokens (JWT) & bcrypt (Password Hashing)
 
-## 🛠️ Installation & Setup
+##  Installation & Setup
 
 ### Prerequisites
 Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
@@ -58,7 +58,7 @@ npm run dev
 ```
 The frontend will run on `http://localhost:5173/`.
 
-## 🌐 Deployment
+##  Deployment
 - **Frontend**: Designed to be easily hosted on platforms like **Vercel** or Netlify.
 - **Backend**: Configured to be compatible with **Render** (using standard `app.listen()`) and **Vercel Serverless Functions** (using `module.exports = app`). 
   - *Note: If hosting the backend on Render, the backend `.env` file variables must be manually added to Render's Environment Variables dashboard.*
